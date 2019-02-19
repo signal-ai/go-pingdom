@@ -2,7 +2,6 @@ package pingdom
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"strconv"
 )
@@ -65,6 +64,5 @@ func (cs *CheckRecipe) Summary(id int, params ...map[string]string) (*RecipeSumm
 	m := &RecipeSummaryResponse{}
 
 	err = json.Unmarshal([]byte(bodyString), &m)
-	fmt.Print(m.Summary.Hours)
 	return m, err
 }
